@@ -130,7 +130,7 @@ void free_matrix_to_text(char* output, int** mat, int m, int n) {
 }
 
 int mod_inverse(int a, int m) {
-    a = a%m; 
+    a = a % m; 
     for (int x=1; x<m; x++) 
        if ((a*x) % m == 1) 
           return x; 
