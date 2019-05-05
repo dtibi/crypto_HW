@@ -5,7 +5,7 @@
 #include "q1_decrypt.h"
 #include "q1_auxFuncs.h"
 
-char* key = "road";
+char* key = "zzpk";
 char* plain_text = "daniel";
 
 void main() {
