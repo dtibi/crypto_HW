@@ -5,6 +5,9 @@
 #include "q1_decrypt.h"
 #include "q1_auxFuncs.h"
 
+char* key = "road";
+char* plain_text = "daniel";
+
 void main() {
 	int** text_mat = alloc_text_to_matrix(plain_text,1);
 	int** key_mat = alloc_text_to_matrix(key,0);

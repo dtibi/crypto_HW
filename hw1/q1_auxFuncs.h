@@ -4,9 +4,7 @@
 #define M 2
 #define R 3
 #define N 26	//not sure what this value should be
-#define DEBUG 1
-extern char* key = "road";
-extern char* plain_text = "encyclopedia";
+#define DEBUG 0
 
 /* This function calculates 2 times pkey matrix + pkey matrix raised to the power of 3 
 it returns the result of the matrix pointer to allocated space that needs to be freed later on.*/
