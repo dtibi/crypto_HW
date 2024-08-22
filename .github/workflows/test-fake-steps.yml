@@ -23,11 +23,12 @@ jobs:
 
       - name: Log SHA
         run: |
-          echo "Commit SHA: ${{ github.sha }}"
+          echo "Commit SHA1?: ${{ github.sha }}"
+          echo "Commit SHA2?: ${{ github.event.pull_request.head.sha }} "
 
       - name: Run fake steps script
         run: |
           pip install requests
-          python3 fake_steps.py ${{ github.sha }}
+          python3 fake_steps.py ${{ github.event.pull_request.head.sha }} 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
