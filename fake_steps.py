@@ -3,7 +3,7 @@ import os
 import time
 # GitHub repository information
 repo = os.getenv('GITHUB_REPOSITORY')
-pull_request_sha = os.getenv('GITHUB_SHA')
+pull_request_sha = sys.argv[1]
 github_token = os.getenv('GITHUB_TOKEN')
 
 # Define 5 fake steps with different statuses
