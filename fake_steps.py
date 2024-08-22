@@ -42,13 +42,15 @@ for step in fake_steps:
 
     # Print payload for debugging
     print("Payload:", payload)
-
-    # Send the API request with the token included only in the actual request
+    
+    
     response = requests.post(
-        f"https://api.github.com/repos/{repo}/check-runs",
-        headers={**headers, 'Authorization': f'token {github_token}'},
-        json=payload
-    )
+    f"https://api.github.com/repos/{repo}/check-runs",
+    headers={**headers, 'Authorization': f'token {github_token}'},
+    json=payload)
+    print("Response Status Code:", response.status_code)
+    print("Response Content:", response.content.decode())
     response.raise_for_status()
+   
 
 print("Fake steps completed.")
