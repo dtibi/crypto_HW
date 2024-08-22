@@ -1,0 +1,26 @@
+name: Test Fake Steps
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  fake-steps:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run fake steps script
+        run: |
+          pip install requests
+          python3 fake_steps.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
