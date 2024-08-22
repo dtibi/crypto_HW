@@ -1,6 +1,6 @@
 import requests
 import os
-
+import time
 # GitHub repository information
 repo = os.getenv('GITHUB_REPOSITORY')
 pull_request_sha = os.getenv('GITHUB_SHA')
@@ -51,6 +51,7 @@ for step in fake_steps:
     print("Response Status Code:", response.status_code)
     print("Response Content:", response.content.decode())
     response.raise_for_status()
+    time.sleep(5)
    
-
+time.sleep(120)
 print("Fake steps completed.")
