@@ -21,6 +21,6 @@ jobs:
       - name: Run fake steps script
         run: |
           pip install requests
-          python3 fake_steps.py
+          python3 fake_steps.py ${{ github.sha }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
