@@ -15,11 +15,14 @@ fake_steps = [
     {"name": "Step 5: Cleanup", "status": "success"}
 ]
 
-# Headers for GitHub API request
+# Headers for GitHub API request (without token for logging)
 headers = {
-    'Authorization': f'token {github_token}',
     'Accept': 'application/vnd.github.v3+json'
 }
+
+# Print repository and PR SHA for debugging
+print(f"Repository: {repo}")
+print(f"Pull Request SHA: {pull_request_sha}")
 
 # Create check runs for each fake step
 for step in fake_steps:
@@ -37,9 +40,13 @@ for step in fake_steps:
         }
     }
 
+    # Print payload for debugging
+    print("Payload:", payload)
+
+    # Send the API request with the token included only in the actual request
     response = requests.post(
         f"https://api.github.com/repos/{repo}/check-runs",
-        headers=headers,
+        headers={**headers, 'Authorization': f'token {github_token}'},
         json=payload
     )
     response.raise_for_status()
