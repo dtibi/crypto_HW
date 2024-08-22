@@ -1,5 +1,5 @@
 import requests
-import os
+import os,sys
 import time
 # GitHub repository information
 repo = os.getenv('GITHUB_REPOSITORY')
