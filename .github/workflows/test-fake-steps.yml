@@ -21,6 +21,10 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Log SHA
+        run: |
+          echo "Commit SHA: ${{ github.sha }}"
+
       - name: Run fake steps script
         run: |
           pip install requests
