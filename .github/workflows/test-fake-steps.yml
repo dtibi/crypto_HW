@@ -3,7 +3,7 @@ name: Test Fake Steps
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   fake-steps:
